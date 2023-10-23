@@ -27,7 +27,7 @@ app.get("/healthz", (req, res) => {
   res.send("OK");
 });
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   let authorization = (
     (req &&
       req.headers &&
