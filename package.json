@@ -2,9 +2,19 @@
   "name": "foundry-dnd-beyond-rolls-module-companion",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx -y prettier --write ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,9 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mbround18/fvtt-dndbeyond-companion:latest
+    container_name: fvtt-dndbeyond-companion
+    ports:
+      - 8745:8745
