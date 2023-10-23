@@ -22,6 +22,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get("/healthz", (req, res) => {
+  res.status(200);
+  res.send("OK");
+})
+
 app.get("/", (req, res) => {
   let authorization = (
     (req &&
