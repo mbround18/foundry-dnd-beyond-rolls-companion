@@ -36,7 +36,7 @@ helm repo update
 helm show values mbround18/fvtt-dndbeyond-companion > values.yaml
 
 # Edit values.yaml to your liking
-eval "${EDITOR:-vi}" values.yaml
+eval "${EDITOR:-vi} values.yaml" 
 
 # Create or use an existing namespace
 helm -n ${NAMESPACE} install beyond-companion mbround18/fvtt-dndbeyond-companion -f values.yaml
