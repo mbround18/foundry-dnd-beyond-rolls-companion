@@ -17,11 +17,30 @@ creator. <3](https://github.com/rm2kdev/foundry-dnd-beyond-rolls-companion)
 ### Docker
 
 ```shell
-docker run mbround18/fvtt-dndbeyond-companion
+docker run -p 8745:8745 mbround18/fvtt-dndbeyond-companion
 ```
 
 ### Kubernetes
 
 ```shell
+# Replace namespace with your own
+export NAMESPACE="foundry"
+
+# Add the repo
 helm repo add mbround18 https://mbround18.github.io/helm-charts/
+
+# Update helm repos
+helm repo update
+
+# Download chart values file
+helm show values mbround18/fvtt-dndbeyond-companion > values.yaml
+
+# Edit values.yaml to your liking
+eval "${EDITOR:-vi}" values.yaml
+
+# Create or use an existing namespace
+helm -n ${NAMESPACE} install beyond-companion mbround18/fvtt-dndbeyond-companion -f values.yaml
+
+# If you need to update the chart
+helm -n ${NAMESPACE} upgrade beyond-companion mbround18/fvtt-dndbeyond-companion -f values.yaml
 ```
