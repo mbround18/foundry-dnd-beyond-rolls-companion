@@ -41,7 +41,7 @@ This will deploy the application to your Kubernetes cluster using the specified 
 - `/readiness`: Readiness probe endpoint.
 - `/liveness`: Liveness probe endpoint.
 - `/startup`: Startup probe endpoint.
-- `/*`: Proxy endpoint to handle authorization with DnD Beyond.
+- `/proxy`: Proxy endpoint to handle authorization with DnD Beyond.
 
 ## Contributing
 
