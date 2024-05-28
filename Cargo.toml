@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "server"
+]
+resolver = "2"
+
+
+[profile.release]
+opt-level = 3
+codegen-units = 16 # Adjust based on your CPU cores
+lto = true
+strip = true

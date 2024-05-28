@@ -2,3 +2,5 @@
 node_modules
 .github
 README.md
+target
+k8s
