@@ -1,6 +1,7 @@
 # Foundry DnD Beyond Rolls Companion
 
 This project is a Rocket-based Rust application that serves as a companion for Foundry VTT and DnD Beyond rolls. The application includes health checks, readiness, and liveness probes, and can be deployed using Kubernetes.
+This project was based on the [Foundry VTT DnD Beyond Companion](https://github.com/rm2kdev/foundry-dnd-beyond-rolls-companion) project by [rm2kdev](https://github.com/rm2kdev).
 
 ## Quick Start
 
