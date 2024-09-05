@@ -1,11 +1,11 @@
-FROM alpine as base
+FROM alpine AS base
 
 RUN apk add --no-cache ca-certificates \
     && update-ca-certificates
 
 RUN addgroup -S rocket && adduser -S rocket -G rocket
 
-FROM rust:alpine as builder
+FROM rust:alpine AS builder
 
 WORKDIR /application
 
@@ -15,8 +15,14 @@ ENV CARGO_BUILD_TARGET=$TARGET \
 
 COPY ./Cargo.toml ./Cargo.toml ./
 
-RUN apk add --no-cache musl-dev musl-utils gcc pkgconfig openssl-dev build-base openssl-libs-static
-
+RUN apk add --no-cache \
+    build-base \
+    gcc \
+    musl-dev \
+    musl-utils \
+    openssl-dev \
+    openssl-libs-static \
+    pkgconfig
 RUN rustup target add $CARGO_BUILD_TARGET
 
 RUN cargo new --bin server
@@ -36,7 +42,7 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
   && rm -rf /application
 
 
-FROM scratch as runtime
+FROM scratch AS runtime
 
 COPY --from=base /etc/passwd /etc/passwd
 COPY --from=base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/

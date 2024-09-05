@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: runtime
     image: mbround18/fvtt-dndbeyond-companion:latest
     container_name: fvtt-dndbeyond-companion
     ports:
