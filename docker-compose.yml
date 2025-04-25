@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: runtime
-    image: mbround18/fvtt-dndbeyond-companion:latest
+    image: mbround18/fvtt-dndbeyond-companion:development
     container_name: fvtt-dndbeyond-companion
     ports:
       - 8745:8745

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea
 node_modules
 .github
@@ -5,3 +6,12 @@ README.md
 target
 k8s
 .vscode
+=======
+.idea
+node_modules
+.github
+README.md
+target
+k8s
+.vscode
+>>>>>>> 4570b89 (Normalize all line endings to LF)
