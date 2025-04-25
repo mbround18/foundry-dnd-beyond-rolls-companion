@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: runtime
+      args:
+        TARGET: x86_64-unknown-linux-musl
     image: mbround18/fvtt-dndbeyond-companion:development
     container_name: fvtt-dndbeyond-companion
     ports:
