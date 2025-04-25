@@ -33,7 +33,6 @@ This will deploy the application to your Kubernetes cluster using the specified 
 
 ## Environment Variables
 
-- **ROCKET_MOUNT** (optional): Specifies the Rocket mount point.
 - **LOCATION**: Path to the server binary inside the container (default: `/usr/local/bin/actix_server`).
 - **PORT**: Port the server listens on (default: `8745`).
 - **ADDRESS**: Address the server binds to (default: `0.0.0.0`).
